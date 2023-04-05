@@ -7,7 +7,7 @@ const ul = document.querySelector("ul");
 const ADD_TODO = "ADD_TODO";
 const DELETE_TODO = "DELETE_TODO";
 
-// 보통은 dispatch에 타입을 직접 지정해주지 않고 아래와 같이 함수로 만들어서 type 및 값들을 return 해주는 방식으로 사용한다.
+// 보통은 dispatch에 타입을 직접 지정해주지 않고 아래와 같이 함수로 만들어서 type 및 값들을 return 해주는 방식으로 사용한다. 이것을 action creater라고 부른다.
 const addToDo = (text) => {
   return {
     type: ADD_TODO,
