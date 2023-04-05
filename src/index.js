@@ -11,7 +11,7 @@ const reducer = (state = [], action) => {
   console.log(action);
   switch (action.type) {
     case ADD_TODO:
-      return [];
+      return [...state, { text: action.text, id: Date.now() }];
     case DELETE_TODO:
       return [];
     default:
@@ -20,6 +20,8 @@ const reducer = (state = [], action) => {
 };
 
 const store = createStore(reducer);
+
+store.subscribe(() => console.log(store.getState()));
 
 const createToDo = (toDo) => {
   const li = document.createElement("li");
@@ -50,3 +52,4 @@ form.addEventListener("submit", onSubmit);
 // return smth3
 // }
 // string으로 바로 쓰는 대신에 const variable로 선언해서 사용하기 -> 에러 발견 용이
+// store를 수정할 수 있는 유일한 방법은 action을 보내는 방법뿐이다. 또한 state를 mutate하면 안된다. 새로운 state를 create하고 그 새로운 state를 꼭 return 해줘야 한다.
