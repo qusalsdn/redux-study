@@ -1,5 +1,5 @@
-import { createStore } from "redux";
-import { createAction, createReducer } from "@reduxjs/toolkit";
+// import { createStore } from "redux";
+import { configureStore, createAction, createReducer } from "@reduxjs/toolkit";
 
 // const ADD = "ADD";
 // const DELETE = "DELETE";
@@ -42,7 +42,8 @@ const reducer = createReducer([], {
   [deleteToDo]: (state, action) => state.filter((toDo) => toDo.id !== action.payload),
 });
 
-const store = createStore(reducer);
+// configureStore를 이용하면 Redux Developer Tools를 사용할 수 있다.
+const store = configureStore({ reducer });
 
 // export const actionCreators = {
 //   addToDo,
