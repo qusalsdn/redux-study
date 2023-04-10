@@ -1,5 +1,5 @@
 // import { createStore } from "redux";
-import { combineReducers, configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 // const ADD = "ADD";
 // const DELETE = "DELETE";
