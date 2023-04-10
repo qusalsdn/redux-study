@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteToDo } from "../store";
+import { remove } from "../store";
 import { Link } from "react-router-dom";
 
 function ToDo({ text, id }) {
@@ -7,7 +7,7 @@ function ToDo({ text, id }) {
   return (
     <li>
       <Link to={`/${id}`}>{text}</Link>
-      <button onClick={() => dispatch(deleteToDo(id))}>DEL</button>
+      <button onClick={() => dispatch(remove(id))}>DEL</button>
     </li>
   );
 }
